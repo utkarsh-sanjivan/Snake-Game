@@ -1,21 +1,8 @@
 ## About the Game
-This game is about collecting the pokeballs. Each pokeball collected will fetch 1 point. The protagonist of this game is the pokemon `Haunter`.  Here the pokemon `Haunter` have to roam through out the grass and pickup the pokeball that appear on the screen. The pokeballs will appear after certain interval at random positions. To collect the ball the pokemon has to go over the pokeball. To control the pokemon use key `W` or `Up` arrow key to go up, `S` or `Down` arrow key to go down, `D` or `Right` arrow key to go right and `A` or `Left` arrow key to go left. One can also restart the game by clickong on the `Restart` button. Currently the maximum score that can be achieved is `999`.
+This is a classic snake game in you have to feed the apples to the snake for it to grow and for you to collect points. Each apple that  the snake will eat will add one point to your score. This application provides the functionality of changing the size of the snake and the apple to better suit your vision and change the speedto suit your coodrination. It has two sizes medium and large and 5 speed levels. This application stores the highscore for a particular device at a particular speeds which can be reset.  
 
 ## Accessing the game
-[Gotta Catch em All](https://utkarsh-sanjivan.github.io/Pokemon-Game/)
+[Snake Bite](https://utkarsh-sanjivan.github.io/Snake-Game/)
 
 ## Technologies Used
 In this application I have used Javascript and HTML to desgin the whole game.
-
-## Snapshot
-Game Snapshot
-
-![Alt text](/images/screenshot.png?raw=true "Optional Title")
-
-Pokemon Snapshot
-
-![Alt text](/images/pokemon.png?raw=true "Optional Title")
-
-Pokeball Snapshot
-
-![Alt text](/images/pokeball.png?raw=true "Optional Title")
