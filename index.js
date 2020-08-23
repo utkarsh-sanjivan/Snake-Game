@@ -7,6 +7,7 @@ var speedArray = [1, 25, 50, 75, 100];
 var startX = 0;
 var startY = 0;
 var score = 0;
+var paused = false;
 var snake = {
   x: 160,
   y: 160,
@@ -32,7 +33,7 @@ var apple = {
 })(window, document, undefined);
 
 function loop() {
-    setTimeout(() =>window.requestAnimationFrame(loop), miliseconds);
+    if (!paused) setTimeout(() =>window.requestAnimationFrame(loop), miliseconds);
     if (++count < 4) {
         return;
     }
@@ -198,45 +199,49 @@ document.addEventListener('touchend', function(e){
     distY = touch.pageY - startY
 
     if (Math.abs(distX) > Math.abs(distY)) {
-      if (distX > 0 && snake.dx === 0) {
+    if (distX > 0 && snake.dx === 0) {
         snake.dx = grid;
         snake.dy = 0;
-      }
-      else if (distX < 0 && snake.dx === 0) {
+    }
+    else if (distX < 0 && snake.dx === 0) {
         snake.dx = -grid;
         snake.dy = 0;
-      }
+    }
     } else {
-      if (distY > 0 && snake.dy === 0) {
+    if (distY > 0 && snake.dy === 0) {
         snake.dy = grid;
         snake.dx = 0;
-      }
-      else if (distY < 0 && snake.dy === 0) {
+    }
+    else if (distY < 0 && snake.dy === 0) {
         snake.dy = -grid;
         snake.dx = 0;
-      }
+    }
     }
     e.preventDefault();
-
 }, false)
 
 document.addEventListener('keydown', function(e) {
-  if (e.which === 37 && snake.dx === 0) {
-    snake.dx = -grid;
-    snake.dy = 0;
-  }
-  else if (e.which === 38 && snake.dy === 0) {
-    snake.dy = -grid;
-    snake.dx = 0;
-  }
-  else if (e.which === 39 && snake.dx === 0) {
-    snake.dx = grid;
-    snake.dy = 0;
-  }
-  else if (e.which === 40 && snake.dy === 0) {
-    snake.dy = grid;
-    snake.dx = 0;
-  }
+    if (e.keyCode === 37 && snake.dx === 0) {
+        snake.dx = -grid;
+        snake.dy = 0;
+    }
+    else if (e.keyCode === 38 && snake.dy === 0) {
+        snake.dy = -grid;
+        snake.dx = 0;
+    }
+    else if (e.keyCode === 39 && snake.dx === 0) {
+        snake.dx = grid;
+        snake.dy = 0;
+    }
+    else if (e.keyCode === 40 && snake.dy === 0) {
+        snake.dy = grid;
+        snake.dx = 0;
+    } else if (e.keyCode === 27 || e.keyCode === 32) {
+        paused = !paused;
+        if (!paused) {
+            window.requestAnimationFrame(loop);
+        }
+     }
 });
 
 window.requestAnimationFrame(loop);
