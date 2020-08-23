@@ -2,6 +2,8 @@ var canvas = {};
 var context = {};
 var grid = 8;
 var allowedTime = 200;
+var miliseconds = 1;
+var speedArray = [1, 25, 50, 75, 100];
 var startX = 0;
 var startY = 0;
 var score = 0;
@@ -30,7 +32,7 @@ var apple = {
 })(window, document, undefined);
 
 function loop() {
-    window.requestAnimationFrame(loop);
+    setTimeout(() =>window.requestAnimationFrame(loop), miliseconds);
     if (++count < 4) {
         return;
     }
@@ -76,7 +78,7 @@ function loop() {
             snake.dy = 0;
             apple.x = getRandomInt(0, 25) * grid;
             apple.y = getRandomInt(0, 25) * grid;
-            if (score>localStorage.getItem('highscore')) localStorage.setItem('highscore', score);
+            if (score>JSON.parse(localStorage.getItem('highscore'))[document.getElementById("board-speed").value]) saveHighScore(score);
             score = 0;
             displayScore();
             displayHighScore();
@@ -91,7 +93,7 @@ function getRandomInt(min, max) {
 
 function onResetHighScore() {
     onRestart();
-    localStorage.setItem('highscore', 0);
+    saveHighScore(0);
     displayScore();
     displayHighScore();
 }
@@ -112,6 +114,7 @@ function onRestart() {
     y: 320
     };
     displayScore();
+    displayHighScore();
 }
 
 function selectSize() {
@@ -129,6 +132,15 @@ function selectSize() {
             dx: grid,
         };
     };
+    document.getElementById("board-speed").blur();
+    document.getElementById('game').focus();
+}
+
+function selectSpeed() {
+    onRestart();
+    miliseconds = speedArray[parseInt(document.getElementById("board-speed").value)-1];
+    document.getElementById("board-speed").blur();
+    document.getElementById('game').focus();
 }
 
 function displayScore() {
@@ -140,9 +152,26 @@ function displayScore() {
     document.getElementById('score-one').innerHTML = one;
 }
 
+function saveHighScore(score) {
+    var highScoreObj = JSON.parse(localStorage.getItem('highscore'));
+    highScoreObj = {
+        ...highScoreObj,
+        [document.getElementById("board-speed").value]: score,
+    }
+    localStorage.setItem('highscore', JSON.stringify(highScoreObj));
+}
+
 function displayHighScore() {
-    var highScore = localStorage.getItem('highscore');
-    if (!highScore) localStorage.setItem('highscore', 0);
+    var highScoreObj = localStorage.getItem('highscore');
+    if (!highScoreObj) localStorage.setItem('highscore', JSON.stringify({
+        '1': 0,
+        '2': 0,
+        '3': 0,
+        '4': 0,
+        '5': 0,
+    }));
+    highScoreObj = localStorage.getItem('highscore');
+    var highScore = JSON.parse(highScoreObj)[document.getElementById("board-speed").value];
     const hun = highScore.toString()[highScore.toString().length-3]||'0';
     const ten = highScore.toString()[highScore.toString().length-2]||'0';
     const  one = highScore.toString()[highScore.toString().length-1]||'0';

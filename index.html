@@ -11,8 +11,15 @@
 	<div class='board' id='board'>
         <div class='side-bar'>
 			<select class='select-board-size' name="board-size" id="board-size" onchange="selectSize()">
-				<option value="medium"><div  class='board-size-option'>Medium</div></option>
-				<option value="large"><div  class='board-size-option'>Large</div></option>
+				<option  class='board-size-option' value="medium">Medium</option>
+				<option  class='board-size-option' value="large">Large</option>
+			</select>
+			<select class='select-board-speed' name="board-speed" id="board-speed" onchange="selectSpeed()">
+				<option  class='board-size-option' value="1">1</option>
+				<option  class='board-size-option' value="2">2</option>
+				<option  class='board-size-option' value="3">3</option>
+				<option  class='board-size-option' value="4">4</option>
+				<option  class='board-size-option' value="5">5</option>
 			</select>
             <button class='start-button' onclick='onRestart()'>Restart</button>
             <button class='reset-highscore-button' onclick='onResetHighScore()'>Reset High Score</button>

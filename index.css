@@ -106,7 +106,24 @@ html, body {
 .select-board-size {
     position: absolute;
     top: 25%;
-    left: 30%;
+    left: 10%;
+	width: 40%;
+	height: 5%;
+	cursor: pointer;
+    background-color: #48a1d1;
+    text-align: center;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	border: none;
+	border-radius: 3px;
+	letter-spacing: 0.8px;
+}
+
+.select-board-speed {
+    position: absolute;
+    top: 25%;
+    left: 60%;
 	width: 40%;
 	height: 5%;
 	cursor: pointer;
@@ -140,8 +157,4 @@ html, body {
     top: 45%;
     left: 60%;
     color:  #fff;
-}
-
-.options {
-    background-color: #48a1d1;
 }
