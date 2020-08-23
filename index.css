@@ -1,0 +1,147 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background: black;
+  }
+  canvas {
+    border: 1px solid white;
+  }
+
+@font-face {
+    font-family: 'digital';
+    src: url('images/digital-7.ttf');
+}
+
+.board {
+	background-color: black;
+	min-height: 100vh;
+	display: flex;
+}
+
+.game {
+    width: 50%;
+}
+
+.game-board {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.side-bar {
+	width: 25%;
+	position: relative;
+}
+
+.start-button {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+	width: 40%;
+	height: 5%;
+	cursor: pointer;
+	background-color: #48a1d1;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	border: none;
+	border-radius: 3px;
+	letter-spacing: 0.8px;
+}
+
+.reset-highscore-button {
+    position: absolute;
+    top: 35%;
+    left: 60%;
+	width: 40%;
+	height: 5%;
+	cursor: pointer;
+	background-color: #48a1d1;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	border: none;
+	border-radius: 3px;
+	letter-spacing: 0.8px;
+}
+
+.score-display {
+	position: absolute;
+    top: 50%;
+    left: 10%;
+	min-width: 40%;
+    background-color: #fff;
+    color: #ff0000;
+    border-radius: 3px;
+    border: none;
+	display: flex;
+}
+
+.high-score-display {
+	position: absolute;
+    top: 50%;
+    left: 60%;
+	min-width: 40%;
+    background-color: #fff;
+    color: #ff0000;
+    border-radius: 3px;
+    border: none;
+	display: flex;
+}
+
+.score {
+	width: 33%;
+	font-weight: 600;
+    font-size: 40px;
+    font-family: digital;
+    text-align: center;
+}
+
+.select-board-size {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+	width: 40%;
+	height: 5%;
+	cursor: pointer;
+    background-color: #48a1d1;
+    text-align: center;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	border: none;
+	border-radius: 3px;
+	letter-spacing: 0.8px;
+}
+
+.board-size-option {
+    background-color: #48a1d1;
+    text-align: center;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;   
+}
+
+.score-text {
+    position: absolute;
+    top: 45%;
+    left: 10%;   
+    color:  #fff;
+}
+
+.high-score-text {
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    color:  #fff;
+}
+
+.options {
+    background-color: #48a1d1;
+}

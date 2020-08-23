@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snake Bite</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./index.js" type="text/javascript"></script>
+	<link href="./index.css" type="text/css" rel="stylesheet">
+	<link rel="icon" href="images/snake-logo.jpeg"/>
+</head>
+<body>
+	<div class='board' id='board'>
+        <div class='side-bar'>
+			<select class='select-board-size' name="board-size" id="board-size" onchange="selectSize()">
+				<option value="medium"><div  class='board-size-option'>Medium</div></option>
+				<option value="large"><div  class='board-size-option'>Large</div></option>
+			</select>
+            <button class='start-button' onclick='onRestart()'>Restart</button>
+            <button class='reset-highscore-button' onclick='onResetHighScore()'>Reset High Score</button>
+			<div class='score-text'>Score</div>
+            <div class='score-display' id='score-display'>
+                <div class='score' id='score-hundreth'></div>
+                <div class='score' id='score-tenth'></div>
+                <div class='score' id='score-one'></div>
+            </div>
+			<div class='high-score-text'>Highscore</div>
+			<div class='high-score-display' id='high-score-display'>
+                <div class='score' id='high-score-hundreth'></div>
+                <div class='score' id='high-score-tenth'></div>
+                <div class='score' id='high-score-one'></div>
+            </div>
+        </div>
+		<div class='game'>
+			<canvas class='game-board' width="400" height="400" id="game">Your browser doesn't support canvas</canvas>
+		</div>
+        <div class='side-bar'>
+        </div>
+    </div>
+</body>
+</html>
