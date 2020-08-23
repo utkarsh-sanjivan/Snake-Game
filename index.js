@@ -240,6 +240,9 @@ document.addEventListener('keydown', function(e) {
         paused = !paused;
         if (!paused) {
             window.requestAnimationFrame(loop);
+            document.getElementById('pause-text').innerHTML = '';
+        } else {
+            document.getElementById('pause-text').innerHTML = 'Paused! Press Space or Escape to resume';
         }
      }
 });
