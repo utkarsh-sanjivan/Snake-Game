@@ -44,7 +44,13 @@
 			<canvas class='game-board' width="400" height="400" id="game">Your browser doesn't support canvas</canvas>
 		</div>
         <div class='side-bar-text'>
-			<div class='pause-text' id='pause-text'></div>
+			<div class='pause-text' id='pause-text'></div>\
+			<div class='control-button-panel' id='control-button-panel'>
+				<button class='control-button' id='control-up-button' onclick="moveSnake('up')">↑</button>
+				<button class='control-button' id='control-left-button' onclick="moveSnake('left')">←</button>
+				<button class='control-button' id='control-down-button' onclick="moveSnake('down')">↓</button>
+				<button class='control-button' id='control-right-button' onclick="moveSnake('right')">→</button>
+			</div>
         </div>
     </div>
 </body>

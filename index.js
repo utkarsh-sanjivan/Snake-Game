@@ -21,6 +21,7 @@ var apple = {
   x: 320,
   y: 320
 };
+var global_direction = '';
 
 (function(window, document, undefined){
     window.onload = init;
@@ -181,6 +182,11 @@ function displayHighScore() {
     document.getElementById('high-score-one').innerHTML = one;
 }
 
+function moveSnake(direction) {
+    global_direction = direction;
+    document.dispatchEvent(new Event('keydown'));
+}
+
 document.addEventListener('touchstart', function(e){
     var touch = e.changedTouches[0]
     startX = touch.pageX
@@ -221,19 +227,19 @@ document.addEventListener('touchend', function(e){
 }, false)
 
 document.addEventListener('keydown', function(e) {
-    if (e.keyCode === 37 && snake.dx === 0) {
+    if ((e.keyCode === 37 || global_direction === 'left') && snake.dx === 0) {
         snake.dx = -grid;
         snake.dy = 0;
     }
-    else if (e.keyCode === 38 && snake.dy === 0) {
+    else if ((e.keyCode === 38 || global_direction === 'up') && snake.dy === 0) {
         snake.dy = -grid;
         snake.dx = 0;
     }
-    else if (e.keyCode === 39 && snake.dx === 0) {
+    else if ((e.keyCode === 39 || global_direction === 'right') && snake.dx === 0) {
         snake.dx = grid;
         snake.dy = 0;
     }
-    else if (e.keyCode === 40 && snake.dy === 0) {
+    else if ((e.keyCode === 40 || global_direction === 'down') && snake.dy === 0) {
         snake.dy = grid;
         snake.dx = 0;
     } else if (e.keyCode === 27 || e.keyCode === 32) {
