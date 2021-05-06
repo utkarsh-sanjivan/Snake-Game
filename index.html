@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class='board' id='board'>
-        <div class='side-bar'>
+        <div class='side-bar-main'>
 			<select class='select-board-size' name="board-size" id="board-size" onchange="selectSize()">
 				<option  class='board-size-option' value="medium">Medium</option>
 				<option  class='board-size-option' value="large">Large</option>
@@ -23,24 +23,28 @@
 			</select>
             <button class='start-button' onclick='onRestart()'>Restart</button>
             <button class='reset-highscore-button' onclick='onResetHighScore()'>Reset High Score</button>
-			<div class='score-text'>Score</div>
-            <div class='score-display' id='score-display'>
-                <div class='score' id='score-hundreth'></div>
-                <div class='score' id='score-tenth'></div>
-                <div class='score' id='score-one'></div>
-            </div>
-			<div class='high-score-text'>Highscore</div>
-			<div class='high-score-display' id='high-score-display'>
-                <div class='score' id='high-score-hundreth'></div>
-                <div class='score' id='high-score-tenth'></div>
-                <div class='score' id='high-score-one'></div>
-            </div>
+			<div class='score-box'>
+				<div class='score-text'>Score</div>
+				<div class='score-display' id='score-display'>
+					<div class='score' id='score-hundreth'></div>
+					<div class='score' id='score-tenth'></div>
+					<div class='score' id='score-one'></div>
+				</div>
+			</div>
+			<div class='high-score-box'>
+				<div class='high-score-text'>Highscore</div>
+				<div class='high-score-display' id='high-score-display'>
+					<div class='score' id='high-score-hundreth'></div>
+					<div class='score' id='high-score-tenth'></div>
+					<div class='score' id='high-score-one'></div>
+				</div>
+			</div>
         </div>
 		<div class='game'>
 			<canvas class='game-board' width="400" height="400" id="game">Your browser doesn't support canvas</canvas>
-			<div class='pause-text' id='pause-text'></div>
 		</div>
-        <div class='side-bar'>
+        <div class='side-bar-text'>
+			<div class='pause-text' id='pause-text'></div>
         </div>
     </div>
 </body>
