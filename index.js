@@ -223,7 +223,6 @@ document.addEventListener('touchend', function(e){
         snake.dx = 0;
     }
     }
-    e.preventDefault();
 }, false)
 
 document.addEventListener('keydown', function(e) {
