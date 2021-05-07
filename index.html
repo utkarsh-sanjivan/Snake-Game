@@ -9,49 +9,45 @@
 </head>
 <body>
 	<div class='board' id='board'>
-        <div class='side-bar-main'>
-			<select class='select-board-size' name="board-size" id="board-size" onchange="selectSize()">
-				<option  class='board-size-option' value="medium">Medium</option>
-				<option  class='board-size-option' value="large">Large</option>
-			</select>
-			<select class='select-board-speed' name="board-speed" id="board-speed" onchange="selectSpeed()">
-				<option class='board-size-option' value="1">1</option>
-				<option class='board-size-option' value="2">2</option>
-				<option class='board-size-option' value="3">3</option>
-				<option class='board-size-option' value="4">4</option>
-				<option class='board-size-option' value="5" selected>5</option>
-			</select>
-            <button class='start-button' onclick='onRestart()'>Restart</button>
-            <button class='reset-highscore-button' onclick='onResetHighScore()'>Reset High Score</button>
-			<div class='score-box'>
-				<div class='score-text'>Score</div>
-				<div class='score-display' id='score-display'>
-					<div class='score' id='score-hundreth'></div>
-					<div class='score' id='score-tenth'></div>
-					<div class='score' id='score-one'></div>
+        <div class='side-bar-main' id='side-bar-main'>
+			<div class='side-bar-inner-box' id='side-bar-inner-box'>
+				<select class='select-board-size' name="board-size" id="board-size" onchange="selectSize()">
+					<option  class='board-size-option' value="medium">Medium</option>
+					<option  class='board-size-option' value="large">Large</option>
+				</select>
+				<select class='select-board-speed' name="board-speed" id="board-speed" onchange="selectSpeed()">
+					<option class='board-size-option' value="1">1</option>
+					<option class='board-size-option' value="2">2</option>
+					<option class='board-size-option' value="3">3</option>
+					<option class='board-size-option' value="4">4</option>
+					<option class='board-size-option' value="5" selected>5</option>
+				</select>
+				<button class='start-button' id='start-button' onclick='onRestart()'>Restart</button>
+				<button class='reset-highscore-button' id='reset-highscore-button' onclick='onResetHighScore()'>Reset High Score</button>
+				<div class='score-box' id='score-box'>
+					<div class='score-text'>Score</div>
+					<div class='score-display' id='score-display'>
+						<div class='score' id='score-hundreth'></div>
+						<div class='score' id='score-tenth'></div>
+						<div class='score' id='score-one'></div>
+					</div>
 				</div>
-			</div>
-			<div class='high-score-box'>
-				<div class='high-score-text'>Highscore</div>
-				<div class='high-score-display' id='high-score-display'>
-					<div class='score' id='high-score-hundreth'></div>
-					<div class='score' id='high-score-tenth'></div>
-					<div class='score' id='high-score-one'></div>
+				<div class='high-score-box' id='high-score-box'>
+					<div class='high-score-text'>Highscore</div>
+					<div class='high-score-display' id='high-score-display'>
+						<div class='score' id='high-score-hundreth'></div>
+						<div class='score' id='high-score-tenth'></div>
+						<div class='score' id='high-score-one'></div>
+					</div>
 				</div>
+				<button class='pause-button' id='pause-button' onclick='pauseGame()'>Pause</button>
 			</div>
         </div>
 		<div class='game'>
 			<canvas class='game-board' width="400" height="400" id="game">Your browser doesn't support canvas</canvas>
 		</div>
-        <div class='side-bar-text'>
-			<div class='pause-text' id='pause-text'></div>\
-			<div class='control-button-panel' id='control-button-panel'>
-				<button class='control-button' id='control-up-button' onclick="moveSnake('up')">↑</button>
-				<button class='control-button' id='control-left-button' onclick="moveSnake('left')">←</button>
-				<button class='control-button' id='control-down-button' onclick="moveSnake('down')">↓</button>
-				<button class='control-button' id='control-right-button' onclick="moveSnake('right')">→</button>
-			</div>
-        </div>
+        <div class='side-bar-text'></div>
+		<div class='pause-text' id='pause-text'></div>
     </div>
 </body>
 </html>
