@@ -238,8 +238,8 @@ html, body {
 
     .control-button-panel {
         display: grid;
-        grid-template-rows: auto auto;
-        grid-template-columns: auto auto auto;
+        grid-template-rows: 75px 75px;
+        grid-template-columns: 75px 75px 75px;
         column-gap: 10px;
         row-gap: 10px;
         margin: auto; 
